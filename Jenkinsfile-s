@@ -6,7 +6,7 @@ node('workstation') {
         stage("one") {
 
                 echo "one"
-                exit 1 // to mark it as a failure
+                sh exit 1 // to mark it as a failure ,  also sh means it is a shell command
 
         }
 
