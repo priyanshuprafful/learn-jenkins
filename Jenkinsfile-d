@@ -27,7 +27,7 @@ pipeline {
 
 
     post {
-        always {
+        failure {
             echo "Always believe something wonderful will happen"
         }
     }
