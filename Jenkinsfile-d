@@ -1,15 +1,15 @@
 pipeline {
-  //  agent any
+    //  agent any
 
-  // Name based agent
+    // Name based agent
 //
 //    agent {
 //        node { label 'workstation' }
 //    }
 
-      agent{
-          label 'terraform'
-      }
+    agent {
+        label 'terraform'
+    }
     stages {
 
         stage("one") {
@@ -22,6 +22,13 @@ pipeline {
             steps {
                 echo "two"
             }
+        }
+    }
+
+
+    post {
+        always {
+            echo "Always believe something wonderful will happen"
         }
     }
 }
