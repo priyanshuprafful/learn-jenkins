@@ -6,7 +6,8 @@ node('workstation') {
         stage("one") {
 
                 echo "one"
-                sh 'exit 1'// to mark it as a failure ,  also sh means it is a shell command
+                sh 'exit 1'
+            // to mark it as a failure ,  also sh means it is a shell command
 
         }
 
@@ -16,6 +17,8 @@ node('workstation') {
 
         }
       } catch (e) {
+          stage('Declarative:Post Actions') {
               echo "This will only run if failed "
+          }
       }
 }
