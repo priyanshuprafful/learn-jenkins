@@ -10,6 +10,6 @@ node {
         stage("two") {
 
                 echo "two"
-            
+
         }
 }

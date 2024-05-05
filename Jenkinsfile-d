@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+  //  agent any
+
+  // Name based agent
+
+    agent {
+        node { label 'workstation' }
+    }
 
     stages {
 
