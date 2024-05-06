@@ -23,9 +23,12 @@ node('workstation') {
 
 
           }
-          stage("two") {
-                input(id: 'deploy_approval' , 'message' : 'Approve deployement?' , ok: 'Deploy' , 'reject': 'Cancel')
-                echo "two"
+          if ( PERSON == "PRAFFUL" ){
+              stage("two") {
+                  input(id: 'deploy_approval' , 'message' : 'Approve deployement?' , ok: 'Deploy' , 'reject': 'Cancel')
+                  echo "two"
+          }
+
 
         }
       } catch (e) {
