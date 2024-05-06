@@ -1,17 +1,16 @@
 node('workstation') {
 
       try {
+          withCredentials([usernameColonPassword(credentialsId: 'SSH', variable: 'USERPASS')]) {
+              stage("one") {
+
+                  echo "one"
+                  sh 'env'
+              }
 
 
-        stage("one") {
-
-                echo "one"
-                sh 'exit 1'
-            // to mark it as a failure ,  also sh means it is a shell command
-
-        }
-
-        stage("two") {
+          }
+          stage("two") {
 
                 echo "two"
 
