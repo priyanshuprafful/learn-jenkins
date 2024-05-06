@@ -1,5 +1,5 @@
 node('workstation') {
-      env.SAMPLE_URL = "google.com" // It is a global variable 
+      env.SAMPLE_URL = "google.com" // It is a global variable , whereas def is local variable
       try {
           withCredentials([usernameColonPassword(credentialsId: 'SSH', variable: 'USERPASS')]) {
               stage("one") {
