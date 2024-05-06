@@ -1,11 +1,12 @@
 node('workstation') {
-
+      env.SAMPLE_URL = "google.com" // It is a global variable 
       try {
           withCredentials([usernameColonPassword(credentialsId: 'SSH', variable: 'USERPASS')]) {
               stage("one") {
 
                   echo "one"
                   sh 'env'
+                  sh 'env > /tmp/env' // redirecting the output to see the file content
               }
 
 
