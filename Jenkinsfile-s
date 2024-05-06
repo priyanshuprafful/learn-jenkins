@@ -1,4 +1,16 @@
 node('workstation') {
+
+
+    properties([
+            parameters([
+                    string(name: 'PERSON', defaultValue: 'MrJenkins' , description: 'Who should I say Hello to ?')
+            ])
+    ])
+
+
+
+
+
       env.SAMPLE_URL = "google.com" // It is a global variable , whereas def is local variable
       try {
           withCredentials([usernameColonPassword(credentialsId: 'SSH', variable: 'USERPASS')]) {
